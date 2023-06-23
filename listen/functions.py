@@ -7,9 +7,11 @@ def listen(to_try=3):
     """
     This method uses the 'speech_recognition' package to listen to a client request and convert it to text.
 
-    :param to_try: This parameter is used to control the number of times the AI will try to listen to the client.
-    :return: Will result in text the voice of the client.
+    :param to_try: Used to control the number of times the AI will try to listen to the client.
+    :return: Will return the customer's voice in text.
     """
+
+    print(to_try)  # TODO - Kayo: remove print.
 
     if to_try > 0:
         try:
@@ -30,14 +32,13 @@ def listen(to_try=3):
 
                 return text
         except Exception as e:
-            # TODO - Kayo: send exception to admin email or sentry.
-            print(str(e))
+            print(str(e))  # TODO - Kayo: send exception to admin email or sentry.
 
             if to_try == 3:
-                speak_ia('Não entendi, pode repeti?')  # TODO - Kayo: create vocabulary to communicate.
+                speak_ia('Não entendi... pode repeti?')  # TODO - Kayo: create vocabulary to communicate.
 
             else:
-                speak_ia('Continuo sem entender, pode repeti?')  # TODO - Kayo: create vocabulary to communicate.
+                speak_ia('Continuo sem entender... pode repeti?')  # TODO - Kayo: create vocabulary to communicate.
 
             return listen(to_try - 1)
 
