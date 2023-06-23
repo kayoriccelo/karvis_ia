@@ -1,29 +1,44 @@
 import speech_recognition as sr
 
+from useful.speak import speak_ia
 
-# ouvir
-def listen(to_try=3):  # tentar
+
+def listen(to_try=3):
+    """
+    This method uses the 'speech_recognition' package to listen to a client request and convert it to text.
+
+    :param to_try: This parameter is used to control the number of times the AI will try to listen to the client.
+    :return: Will result in text the voice of the client.
+    """
+
     if to_try > 0:
         try:
-            # reconhecedor
             recognizer = sr.Recognizer()
 
-            # microfone
             with sr.Microphone() as microphone:
-                # voz
-                voice = recognizer.listen(microphone, phrase_time_limit=5)
+                try:
+                    voice = recognizer.listen(microphone, phrase_time_limit=5)
+                except Exception as e:
+                    raise Exception(f'Error when trying to listen to the client. {str(e)}')
 
-                # texto
-                text = recognizer.recognize_google(voice, language='pt-BR').lower()
+                try:
+                    text = recognizer.recognize_google(voice, language='pt-BR').lower()
+                except Exception as e:
+                    raise Exception(f'Error when trying to convert voice to text using "recognize_google". {str(e)}')
 
-                print(text)
+                print(text)  # TODO - Kayo: remove print.
 
-                return
+                return text
         except Exception as e:
+            # TODO - Kayo: send exception to admin email or sentry.
             print(str(e))
+
+            if to_try == 3:
+                speak_ia('Não entendi, pode repeti?')  # TODO - Kayo: create vocabulary to communicate.
+
+            else:
+                speak_ia('Continuo sem entender, pode repeti?')  # TODO - Kayo: create vocabulary to communicate.
 
             return listen(to_try - 1)
 
-    if to_try > 0:
-        print("I can't hear anything")
-        print('não consigo ouvir nada')
+    speak_ia('Infelizmente eu não entendi o que você disse.')  # TODO - Kayo: create vocabulary to communicate.
