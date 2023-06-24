@@ -3,17 +3,17 @@ import speech_recognition as sr
 from speak.background import speak_ai
 
 
-def listen(to_try=3):
+def listen(try_times=3):
     """
     Uses the 'speech_recognition' package to listen to a client request and convert it to text.
 
-    :param to_try: Used to control the number of times the AI will try to listen to the client.
+    :param try_times: Used to control the number of times the AI will try to listen to the client.
     :return: Will return the customer's voice in text.
     """
 
-    print(f'to try: {to_try}')  # TODO - Kayo: remove print.
+    print(f'to try: {try_times}')  # TODO - Kayo: remove print.
 
-    if to_try > 0:
+    if try_times > 0:
         try:
             recognizer = sr.Recognizer()
 
@@ -35,14 +35,14 @@ def listen(to_try=3):
         except Exception as e:
             print(str(e))  # TODO - Kayo: send exception to admin email or sentry.
 
-            new_to_try = to_try - 1
+            new_try_times = try_times - 1
 
-            if new_to_try == 2:
+            if new_try_times == 2:
                 speak_ai('Não entendi... pode repeti?')  # TODO - Kayo: create vocabulary to communicate.
 
             else:
                 speak_ai('Continuo sem entender... pode repeti?')  # TODO - Kayo: create vocabulary to communicate.
 
-            return listen(new_to_try)
+            return listen(new_try_times)
 
     speak_ai('Infelizmente eu não entendi o que você disse.')  # TODO - Kayo: create vocabulary to communicate.
