@@ -65,15 +65,15 @@ def words_limit(termo, limite):
     return result_token
 
 
-def similar(self, term_1, term_2, count_token=10):
-    token1 = self.text_process(term_1)
-    token2 = self.text_process(term_2)
+def similar(term_1, term_2, count_token=10):
+    token1 = text_process(term_1)
+    token2 = text_process(term_2)
 
-    token1 = self.words_limit(token1, count_token)
-    token2 = self.words_limit(token2, count_token)
+    token1 = words_limit(token1, count_token)
+    token2 = words_limit(token2, count_token)
 
-    l1 = self.list_pairs_char(token1)
-    l2 = self.list_pairs_char(token2)
+    l1 = list_pairs_char(token1)
+    l2 = list_pairs_char(token2)
 
     union = (len(l1) + len(l2))
 
