@@ -5,6 +5,6 @@ from .models import Intention
 
 @admin.register(Intention)
 class IntentionAdmin(admin.ModelAdmin):
-    fields = ('description', 'active', )
-    search_fields = ('description', 'active', )
-    list_display = ('description', 'active', )
+    fields = ('description', 'type', 'active', )
+    search_fields = ('description', 'type', 'active', )
+    list_display = ('description', 'type', 'active', )

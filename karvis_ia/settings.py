@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'data.intention',
     'data.vocabulary',
     'data.dialog',
+    'data.knowledge_base',
 ]
 
 MIDDLEWARE = [
