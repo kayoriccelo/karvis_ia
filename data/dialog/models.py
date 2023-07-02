@@ -4,7 +4,7 @@ from .choices import C_AUTHOR_DIALOG, C_STATUS_DIALOG, STATUS_DIALOG_STARTED
 
 
 class Dialog(models.Model):
-    dialogs = models.ManyToManyField('self', related_name='dialogs')
+    dialogs = models.ManyToManyField('self', related_name='dialogs', blank=True)
     status = models.IntegerField(choices=C_STATUS_DIALOG, default=STATUS_DIALOG_STARTED)
     date = models.DateTimeField(auto_now=True)
 
@@ -15,24 +15,6 @@ class Dialog(models.Model):
 
     def __str__(self):
         return f'{self.date.strftime("%d/%m/%Y %H:%M:%S")} - {self.get_status_display()}'
-
-
-class DialogCommand(models.Model):
-    dialog = models.ForeignKey(Dialog, related_name='dialogs_command', on_delete=models.CASCADE)
-    command = models.TextField(null=True, blank=True)
-    intention = models.ForeignKey(
-        'intention.Intention', related_name='dialogs_command', null=True, blank=True, on_delete=models.PROTECT
-    )
-    author = models.IntegerField(choices=C_AUTHOR_DIALOG)
-    date = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        db_table = 'dialog_command'
-        verbose_name = 'Dialog Command'
-        verbose_name_plural = 'Dialogs Command'
-
-    def __str__(self):
-        return f'{self.date.strftime("%d/%m/%Y %H:%M:%S")} - {self.get_author_display()} - {self.intention}'
 
 
 class DialogQuestion(models.Model):
@@ -53,15 +35,23 @@ class DialogQuestion(models.Model):
         verbose_name_plural = 'Dialogs Question'
 
     def __str__(self):
-        return f'{self.date.strftime("%d/%m/%Y %H:%M:%S")} - {self.get_author_display()} - {self.intention} - {self.vocabulary}'
+        display = f'{self.date.strftime("%d/%m/%Y %H:%M:%S")} - {self.get_author_display()}'
+
+        if self.question:
+            display = f'{display} - {self.question}'
+
+        if self.intention:
+            display = f'{display} - {self.intention}'
+
+        if self.vocabulary:
+            display = f'{display} - {self.vocabulary}'
+
+        return display
 
 
 class DialogResponse(models.Model):
     dialog_question = models.ForeignKey(
         DialogQuestion, related_name='dialogs_response', null=True, blank=True, on_delete=models.CASCADE
-    )
-    dialog_command = models.ForeignKey(
-        DialogCommand, related_name='dialogs_response', null=True, blank=True, on_delete=models.CASCADE
     )
     response = models.TextField(null=True, blank=True)
     intention = models.ForeignKey(
@@ -82,4 +72,18 @@ class DialogResponse(models.Model):
         verbose_name_plural = 'Dialogs Response'
 
     def __str__(self):
-        return f'{self.date.strftime("%d/%m/%Y %H:%M:%S")} - {self.get_author_display()} - {self.intention} - {self.vocabulary} - {self.knowledge_base}'
+        display = f'{self.date.strftime("%d/%m/%Y %H:%M:%S")} - {self.get_author_display()} - {self.dialog_question}'
+
+        if self.response:
+            display = f'{display} - {self.response}'
+
+        if self.intention:
+            display = f'{display} - {self.intention}'
+
+        if self.vocabulary:
+            display = f'{display} - {self.vocabulary}'
+
+        if self.knowledge_base:
+            display = f'{display} - {self.knowledge_base}'
+
+        return display
