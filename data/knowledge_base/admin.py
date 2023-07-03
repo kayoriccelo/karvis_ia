@@ -5,6 +5,6 @@ from .models import KnowledgeBase
 
 @admin.register(KnowledgeBase)
 class KnowledgeBasetAdmin(admin.ModelAdmin):
-    fields = ('intention', 'description',)
-    search_fields = ('intention', 'description',)
+    fields = ('intentions', 'description',)
+    search_fields = ('intentions', 'description',)
     list_display = ('description',)
