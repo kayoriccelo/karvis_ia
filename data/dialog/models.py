@@ -50,6 +50,7 @@ class DialogQuestion(models.Model):
 
 
 class DialogResponse(models.Model):
+    dialog = models.ForeignKey(Dialog, related_name='dialogs_response', null=True, blank=True, on_delete=models.CASCADE)
     dialog_question = models.ForeignKey(
         DialogQuestion, related_name='dialogs_response', null=True, blank=True, on_delete=models.CASCADE
     )
