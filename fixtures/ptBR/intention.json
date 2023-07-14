@@ -1,0 +1,254 @@
+[
+{
+    "model": "intention.intention",
+    "pk": 1,
+    "fields": {
+        "description": "Preciso de informa\u00e7\u00e3o",
+        "active": true,
+        "type": 5
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 2,
+    "fields": {
+        "description": "Preciso de informa\u00e7\u00f5es",
+        "active": true,
+        "type": 5
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 3,
+    "fields": {
+        "description": "Oi, preciso de informa\u00e7\u00e3o",
+        "active": true,
+        "type": 5
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 4,
+    "fields": {
+        "description": "Oi, preciso de informa\u00e7\u00f5es",
+        "active": true,
+        "type": 5
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 5,
+    "fields": {
+        "description": "Estou precisando de informa\u00e7\u00e3o",
+        "active": true,
+        "type": 5
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 6,
+    "fields": {
+        "description": "Estou precisando de informa\u00e7\u00f5es",
+        "active": true,
+        "type": 5
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 7,
+    "fields": {
+        "description": "Oi, estou precisando de informa\u00e7\u00e3o",
+        "active": true,
+        "type": 5
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 8,
+    "fields": {
+        "description": "Oi, estou precisando de informa\u00e7\u00f5es",
+        "active": true,
+        "type": 5
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 9,
+    "fields": {
+        "description": "N\u00e3o",
+        "active": true,
+        "type": 8
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 10,
+    "fields": {
+        "description": "N\u00e3o preciso",
+        "active": true,
+        "type": 8
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 11,
+    "fields": {
+        "description": "Preciso n\u00e3o",
+        "active": true,
+        "type": 8
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 12,
+    "fields": {
+        "description": "Sim",
+        "active": true,
+        "type": 7
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 13,
+    "fields": {
+        "description": "Oi,  Maia",
+        "active": true,
+        "type": 1
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 14,
+    "fields": {
+        "description": "Maia",
+        "active": true,
+        "type": 1
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 15,
+    "fields": {
+        "description": "Oi Mae",
+        "active": true,
+        "type": 1
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 16,
+    "fields": {
+        "description": "Oi m\u00e3e",
+        "active": true,
+        "type": 1
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 17,
+    "fields": {
+        "description": "N\u00e3o maia",
+        "active": true,
+        "type": 8
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 18,
+    "fields": {
+        "description": "Adicione um novo conhecimento",
+        "active": true,
+        "type": 11
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 19,
+    "fields": {
+        "description": "Aprenda um novo conhecimento",
+        "active": true,
+        "type": 11
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 20,
+    "fields": {
+        "description": "Aprenda algo novo",
+        "active": true,
+        "type": 11
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 28,
+    "fields": {
+        "description": "o que \u00e9 dispensa eletr\u00f4nica",
+        "active": true,
+        "type": 4
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 29,
+    "fields": {
+        "description": "fale mais sobre dispensa eletr\u00f4nica",
+        "active": true,
+        "type": 4
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 30,
+    "fields": {
+        "description": "dispensa eletr\u00f4nica",
+        "active": true,
+        "type": 4
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 31,
+    "fields": {
+        "description": "m\u00e3e",
+        "active": true,
+        "type": 1
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 32,
+    "fields": {
+        "description": "bahea",
+        "active": true,
+        "type": 1
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 33,
+    "fields": {
+        "description": "bahia",
+        "active": true,
+        "type": 1
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 34,
+    "fields": {
+        "description": "maya",
+        "active": true,
+        "type": 1
+    }
+},
+{
+    "model": "intention.intention",
+    "pk": 35,
+    "fields": {
+        "description": "mayara",
+        "active": true,
+        "type": 1
+    }
+}
+]

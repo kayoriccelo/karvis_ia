@@ -1,0 +1,204 @@
+[
+{
+    "model": "vocabulary.vocabulary",
+    "pk": 1,
+    "fields": {
+        "description": "Como posso ajudar?",
+        "type": 2,
+        "active": true,
+        "intentions": []
+    }
+},
+{
+    "model": "vocabulary.vocabulary",
+    "pk": 2,
+    "fields": {
+        "description": "Infelizmente ainda n\u00e3o sei fazer isso.",
+        "type": 11,
+        "active": true,
+        "intentions": []
+    }
+},
+{
+    "model": "vocabulary.vocabulary",
+    "pk": 3,
+    "fields": {
+        "description": "Infelizmente n\u00e3o consegui entender...",
+        "type": 10,
+        "active": true,
+        "intentions": []
+    }
+},
+{
+    "model": "vocabulary.vocabulary",
+    "pk": 4,
+    "fields": {
+        "description": "Por nada! eu que agrade\u00e7o em est\u00e1 lhe-ajudando.",
+        "type": 9,
+        "active": true,
+        "intentions": []
+    }
+},
+{
+    "model": "vocabulary.vocabulary",
+    "pk": 5,
+    "fields": {
+        "description": "Foi um prazer poder lhe-ajudar, at\u00e9 a pr\u00f3xima.",
+        "type": 8,
+        "active": true,
+        "intentions": []
+    }
+},
+{
+    "model": "vocabulary.vocabulary",
+    "pk": 6,
+    "fields": {
+        "description": "Posso lhe-ajudar em algo mais?",
+        "type": 7,
+        "active": true,
+        "intentions": []
+    }
+},
+{
+    "model": "vocabulary.vocabulary",
+    "pk": 7,
+    "fields": {
+        "description": "Continuo sem entender, vamos tentar novamente.",
+        "type": 6,
+        "active": true,
+        "intentions": []
+    }
+},
+{
+    "model": "vocabulary.vocabulary",
+    "pk": 8,
+    "fields": {
+        "description": "N\u00e3o conseguir entender, vamos tentar novamente.",
+        "type": 5,
+        "active": true,
+        "intentions": []
+    }
+},
+{
+    "model": "vocabulary.vocabulary",
+    "pk": 9,
+    "fields": {
+        "description": "O que voc\u00ea deseja saber?",
+        "type": 3,
+        "active": true,
+        "intentions": []
+    }
+},
+{
+    "model": "vocabulary.vocabulary",
+    "pk": 10,
+    "fields": {
+        "description": "Infelizmente ainda n\u00e3o sei nada sobre isso.",
+        "type": 12,
+        "active": true,
+        "intentions": []
+    }
+},
+{
+    "model": "vocabulary.vocabulary",
+    "pk": 11,
+    "fields": {
+        "description": "Entendi... voc\u00ea tem algo mais a dizer sobre o que vou aprender?",
+        "type": 18,
+        "active": true,
+        "intentions": []
+    }
+},
+{
+    "model": "vocabulary.vocabulary",
+    "pk": 12,
+    "fields": {
+        "description": "Para que eu possa aprender algo novo, preciso que me diga o que vou aprender... ent\u00e3o... o que vou aprender?",
+        "type": 14,
+        "active": true,
+        "intentions": []
+    }
+},
+{
+    "model": "vocabulary.vocabulary",
+    "pk": 13,
+    "fields": {
+        "description": "Deseja informar o conhecimento?",
+        "type": 16,
+        "active": true,
+        "intentions": [
+            1
+        ]
+    }
+},
+{
+    "model": "vocabulary.vocabulary",
+    "pk": 14,
+    "fields": {
+        "description": "O que deseja pesquisar no chatGPT?",
+        "type": 19,
+        "active": true,
+        "intentions": []
+    }
+},
+{
+    "model": "vocabulary.vocabulary",
+    "pk": 15,
+    "fields": {
+        "description": "Confirmar est\u00e1 informa\u00e7\u00e3o?",
+        "type": 25,
+        "active": true,
+        "intentions": []
+    }
+},
+{
+    "model": "vocabulary.vocabulary",
+    "pk": 16,
+    "fields": {
+        "description": "Para que voc\u00ea me ensine algo novo... Preciso ficar te ouvindo atentamente... Voc\u00ea precisa de quantos minutos para me explicar?",
+        "type": 20,
+        "active": true,
+        "intentions": []
+    }
+},
+{
+    "model": "vocabulary.vocabulary",
+    "pk": 17,
+    "fields": {
+        "description": "Entendi, vamos come\u00e7ar...",
+        "type": 17,
+        "active": true,
+        "intentions": []
+    }
+},
+{
+    "model": "vocabulary.vocabulary",
+    "pk": 18,
+    "fields": {
+        "description": "Oi... Eu sou a Maia...\r\n\r\nA Intelig\u00eancia Artificial da M2A Tecnologia.",
+        "type": 1,
+        "active": true,
+        "intentions": []
+    }
+},
+{
+    "model": "vocabulary.vocabulary",
+    "pk": 19,
+    "fields": {
+        "description": "Encontrei a seguinte informa\u00e7\u00e3o:",
+        "type": 24,
+        "active": true,
+        "intentions": []
+    }
+},
+{
+    "model": "vocabulary.vocabulary",
+    "pk": 20,
+    "fields": {
+        "description": "Entendi... Obrigado por me ensinar algo novo.",
+        "type": 23,
+        "active": true,
+        "intentions": []
+    }
+}
+]
