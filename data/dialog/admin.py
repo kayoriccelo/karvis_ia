@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Dialog, DialogQuestion, DialogCommand, DialogResponse
+from .models import Dialog, DialogQuestion, DialogResponse
 
 
 @admin.register(Dialog)
@@ -18,23 +18,9 @@ class DialogQuestionAdmin(admin.ModelAdmin):
     raw_id_fields = ('dialog', 'intention', 'vocabulary', )
 
 
-@admin.register(DialogCommand)
-class DialogCommandAdmin(admin.ModelAdmin):
-    fields = ('dialog', 'command', 'intention', 'author', )
-    search_fields = ('dialog', 'command', 'intention', 'author', 'date')
-    list_display = ('dialog', 'command', 'intention', 'author', 'date')
-    raw_id_fields = ('dialog', 'intention', )
-
-
 @admin.register(DialogResponse)
 class DialogResponseAdmin(admin.ModelAdmin):
-    fields = (
-        'dialog_question', 'dialog_command', 'response', 'intention', 'vocabulary', 'knowledge_base', 'author',
-    )
-    search_fields = (
-        'dialog_question', 'dialog_command', 'response', 'intention', 'vocabulary', 'knowledge_base', 'author', 'date'
-    )
-    list_display = (
-        'dialog_question', 'dialog_command', 'response', 'intention', 'vocabulary', 'knowledge_base', 'author', 'date'
-    )
-    raw_id_fields = ('dialog_question', 'dialog_command', 'intention', 'vocabulary', 'knowledge_base')
+    fields = ('dialog_question', 'response', 'intention', 'vocabulary', 'knowledge_base', 'author',)
+    search_fields = ('dialog_question', 'response', 'intention', 'vocabulary', 'knowledge_base', 'author', 'date')
+    list_display = ('dialog_question', 'response', 'intention', 'vocabulary', 'knowledge_base', 'author', 'date')
+    raw_id_fields = ('dialog_question', 'intention', 'vocabulary', 'knowledge_base')

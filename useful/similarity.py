@@ -1,9 +1,16 @@
-from unicodedata import normalize
 import string
+
+from unicodedata import normalize
 from nltk.corpus import stopwords
 
 
 def list_pairs_char(term):
+    """
+
+    :param term:
+    :return:
+    """
+
     tokens = term.split(' ')
     result_list = []
 
@@ -19,6 +26,13 @@ def list_pairs_char(term):
 
 
 def count_same_items(list_1, list_2):
+    """
+
+    :param list_1:
+    :param list_2:
+    :return:
+    """
+
     i = 0
 
     for item in list_1:
@@ -30,11 +44,16 @@ def count_same_items(list_1, list_2):
 
 
 def text_process(token):
+    """
+
+    :param token:
+    :return:
+    """
+
     token = token.lower()
 
     token = normalize('NFKD', token).encode('ASCII', 'ignore').decode('ASCII')
 
-    # limpar pontuação
     token = [char for char in token if char not in string.punctuation]
     token = ''.join(token)
 
@@ -50,8 +69,15 @@ def text_process(token):
     return token
 
 
-def words_limit(termo, limite):
-    tokens = termo.split()
+def words_limit(term, limite):
+    """
+
+    :param temr:
+    :param limite:
+    :return:
+    """
+
+    tokens = term.split()
     result_token = ''
     i = 1
 
@@ -66,6 +92,14 @@ def words_limit(termo, limite):
 
 
 def similar(term_1, term_2, count_token=10):
+    """
+
+    :param term_1:
+    :param term_2:
+    :param count_token:
+    :return:
+    """
+
     token1 = text_process(term_1)
     token2 = text_process(term_2)
 

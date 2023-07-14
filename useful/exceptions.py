@@ -12,5 +12,9 @@ class VocabularyNotFoundError(Exception):
     pass
 
 
+class IntentionNotFoundError(Exception):
+    pass
+
+
 class SpeakSayError(Exception):
     pass
