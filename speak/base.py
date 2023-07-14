@@ -8,13 +8,14 @@ from data.vocabulary.choices import (
     TYPE_VOCABULARY_WANT_YOU_WANT_SEARCH_CHATGPT, TYPE_VOCABULARY_HOW_MANY_MINUTES_INFORM_KNOWLEDGE,
     TYPE_VOCABULARY_WHAT_INFORM_KNOWLEDGE, TYPE_VOCABULARY_WHAT_KNOWLEDGE_WANT_TEACH,
     TYPE_VOCABULARY_THANKS_FOR_THE_NEW_KNOWLEDGE, TYPE_VOCABULARY_I_FOUND_THE_FOLLOWING_INFORMATION,
-    TYPE_VOCABULARY_CONFIRMS_THIS_INFORMATION_FOR_KNOWLEDGE
+    TYPE_VOCABULARY_CONFIRMS_THIS_INFORMATION_FOR_KNOWLEDGE, TYPE_VOCABULARY_WANT_INFORM_KNOWLEDGE,
+    TYPE_VOCABULARY_INTRODUCE_YOURSELF
 )
 from data.vocabulary.methods import try_get_vocabulary
 from useful.exceptions import SpeakSayError
 
 
-class SpeakBackground:
+class Speak:
     language = None
     frame_rate = 26500
 
@@ -127,6 +128,9 @@ class SpeakBackground:
     def say_want_add_new_intent(self):
         return self._say_vocabulary(TYPE_VOCABULARY_WANT_ADD_NEW_INTENT)
 
+    def say_want_inform_knowledge(self):
+        return self._say_vocabulary(TYPE_VOCABULARY_WANT_INFORM_KNOWLEDGE)
+
     def say_how_many_minutes_inform_knowledge(self):
         return self._say_vocabulary(TYPE_VOCABULARY_HOW_MANY_MINUTES_INFORM_KNOWLEDGE)
 
@@ -144,3 +148,6 @@ class SpeakBackground:
 
     def say_confirms_this_information_for_knowledge(self):
         return self._say_vocabulary(TYPE_VOCABULARY_CONFIRMS_THIS_INFORMATION_FOR_KNOWLEDGE)
+
+    def say_introduce_yourself(self):
+        return self._say_vocabulary(TYPE_VOCABULARY_INTRODUCE_YOURSELF)
