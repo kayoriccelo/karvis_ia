@@ -47,3 +47,31 @@ def check_an_intent(voice_text, type_intent=None, percentage_comparison=0.7):
         return None
 
     return None
+
+
+def check_an_intent_text(voice_text, type_intent=None):
+    """
+
+    :param voice_text:
+    :param type_intent:
+    :return:
+    """
+
+    from data.intention.models import Intention
+
+    if type_intent:
+        intentions = Intention.objects.filter(type=type_intent, active=True)
+    else:
+        intentions = Intention.objects.filter(active=True)
+
+    voice_text_lower = voice_text.lower()
+
+    for intention in intentions:
+        description_lower = intention.description.lower()
+
+        if description_lower in voice_text_lower.lower():
+            new_voice_text_lower = voice_text_lower.replace(description_lower.lower(), '')
+
+            return intention, new_voice_text_lower
+
+    return None, None
