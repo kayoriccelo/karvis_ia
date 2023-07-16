@@ -13,9 +13,9 @@ class InteractionBase:
         self.artificial_intelligent = artificial_intelligent
 
         self.interactions = [
-            self.core,
+            self.creations_knowledge,
             self.informations,
-            self.creations_knowledge
+            self.core,
         ]
 
         # TODO - Kayo: learn interactions using vocabularies, intents and methods.

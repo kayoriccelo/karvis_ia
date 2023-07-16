@@ -2,6 +2,7 @@ from data.dialog.choices import AUTHOR_DIALOG_AI
 from data.intention.choices import (
     TYPE_INTENTION_ADDING_NEW_KNOWLEDGE, TYPE_INTENTION_NEGATION, TYPE_INTENTION_CONFIRMATION
 )
+from interaction.interactions.creations.knowledges.creations import create_knowledge_chatgpt, create_knowledge_informed
 from useful.chat_gpt import try_get_information_chatgpt
 from data.vocabulary.choices import (
     TYPE_VOCABULARY_WANT_ADD_NEW_INTENT, TYPE_VOCABULARY_WANT_INFORM_KNOWLEDGE,
@@ -69,14 +70,18 @@ class CreationResponses:
 
             if dialog_response and dialog_response.intention:
                 if dialog_response.intention.type == TYPE_INTENTION_CONFIRMATION:
-                    return self.interaction.questions.how_many_minutes_inform_knowledge()
+                    return self.interaction_creation.questions.how_many_minutes_inform_knowledge()
 
         return self.interaction_creation.questions.what_you_want_search_chatgpt()
 
     def how_many_minutes_inform_knowledge(self, **kwargs):
-        return self.interaction.questions.what_knowledge_want_teach()
+        dialog_question = kwargs.get('dialog_question')
+
+        return self.interaction_creation.questions.what_knowledge_want_teach(dialog_question=dialog_question)
 
     def what_knowledge_want_teach(self, **kwargs):
+        create_knowledge_informed(self.interaction.artificial_intelligent.dialog)
+
         self.artificial_intelligent.speak.say_thanks_for_the_new_knowledge()
 
     def what_you_want_search_chatgpt(self, **kwargs):
@@ -102,6 +107,8 @@ class CreationResponses:
 
             if dialog_response and dialog_response.intention:
                 if dialog_response.intention.type == TYPE_INTENTION_CONFIRMATION:
+                    create_knowledge_chatgpt(dialog_question.dialog)
+
                     self.artificial_intelligent.speak.say_thanks_for_the_new_knowledge()
                     return
 
