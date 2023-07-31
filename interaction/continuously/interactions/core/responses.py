@@ -19,8 +19,8 @@ class CoreResponses:
         return self.interaction_core.interaction
 
     @property
-    def artificial_intelligent(self):
-        return self.interaction.artificial_intelligent
+    def karvis(self):
+        return self.interaction.karvis
 
     def negation(self, **kwargs):
         dialog_question = kwargs.get('dialog_question', None)

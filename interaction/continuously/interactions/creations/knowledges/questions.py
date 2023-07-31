@@ -29,11 +29,11 @@ class CreationQuestions:
         return self.interaction_creation.interaction
 
     @property
-    def artificial_intelligent(self):
-        return self.interaction.artificial_intelligent
+    def karvis(self):
+        return self.interaction.karvis
 
     def what_intent_you_want_create(self, **kwargs):
-        vocabulary = self.artificial_intelligent.speak.say_what_intent_yout_want_create()
+        vocabulary = self.karvis.speak.say_what_intent_you_want_create()
 
         dialog_question = self.interaction.dialog.dialogs_question.create(
             author=AUTHOR_DIALOG_AI, vocabulary=vocabulary
@@ -42,7 +42,7 @@ class CreationQuestions:
         return self.interaction.try_response_question_with_intention(dialog_question)
 
     def want_add_new_intent(self, **kwargs):
-        vocabulary = self.artificial_intelligent.speak.say_want_add_new_intent()
+        vocabulary = self.karvis.speak.say_want_add_new_intent()
 
         dialog_question = self.interaction.dialog.dialogs_question.create(
             author=AUTHOR_DIALOG_AI, vocabulary=vocabulary
@@ -51,7 +51,7 @@ class CreationQuestions:
         return self.interaction.try_response_question_with_intention(dialog_question)
 
     def want_inform_knowledge(self, **kwargs):
-        vocabulary = self.artificial_intelligent.speak.say_want_inform_knowledge()
+        vocabulary = self.karvis.speak.say_want_inform_knowledge()
 
         dialog_question = self.interaction.dialog.dialogs_question.create(
             author=AUTHOR_DIALOG_AI, vocabulary=vocabulary
@@ -60,7 +60,7 @@ class CreationQuestions:
         return self.interaction.try_response_question_with_intention(dialog_question)
 
     def how_many_minutes_inform_knowledge(self, **kwargs):
-        vocabulary = self.artificial_intelligent.speak.say_how_many_minutes_inform_knowledge()
+        vocabulary = self.karvis.speak.say_how_many_minutes_inform_knowledge()
 
         dialog_question = self.interaction.dialog.dialogs_question.create(
             author=AUTHOR_DIALOG_AI, vocabulary=vocabulary
@@ -78,7 +78,7 @@ class CreationQuestions:
 
                 return minutes * 60
 
-        vocabulary = self.artificial_intelligent.speak.say_what_knowledge_want_teach()
+        vocabulary = self.karvis.speak.say_what_knowledge_want_teach()
 
         dialog_question = self.interaction.dialog.dialogs_question.create(
             author=AUTHOR_DIALOG_AI, vocabulary=vocabulary
@@ -91,7 +91,7 @@ class CreationQuestions:
         )
 
     def what_you_want_search_chatgpt(self, **kwargs):
-        vocabulary = self.artificial_intelligent.speak.say_what_you_want_search_chatgpt()
+        vocabulary = self.karvis.speak.say_what_you_want_search_chatgpt()
 
         dialog_question = self.interaction.dialog.dialogs_question.create(
             author=AUTHOR_DIALOG_AI, vocabulary=vocabulary
@@ -100,7 +100,7 @@ class CreationQuestions:
         return self.interaction.try_response_question_with_voice_text(dialog_question)
 
     def confirms_this_information_for_knowledge(self, **kwargs):
-        vocabulary = self.artificial_intelligent.speak.say_confirms_this_information_for_knowledge()
+        vocabulary = self.karvis.speak.say_confirms_this_information_for_knowledge()
 
         dialog_question = self.interaction.dialog.dialogs_question.create(
             author=AUTHOR_DIALOG_AI, vocabulary=vocabulary

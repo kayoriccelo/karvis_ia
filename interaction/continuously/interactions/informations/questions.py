@@ -1,5 +1,5 @@
 from data.dialog.choices import AUTHOR_DIALOG_AI
-from data.vocabulary.choices import TYPE_VOCABULARY_WHAT_INFORM_KNOWLEDGE
+from data.vocabulary.choices import TYPE_VOCABULARY_WHAT_INFORMATION_WANT
 
 
 class InformationQuestions:
@@ -11,7 +11,7 @@ class InformationQuestions:
         self.interaction_information = interaction_information
 
         self.vocabularys = {
-            TYPE_VOCABULARY_WHAT_INFORM_KNOWLEDGE: self.what_inform_knowledge,
+            TYPE_VOCABULARY_WHAT_INFORMATION_WANT: self.what_inform_want,
         }
 
     @property
@@ -19,11 +19,11 @@ class InformationQuestions:
         return self.interaction_information.interaction
 
     @property
-    def artificial_intelligent(self):
-        return self.interaction.artificial_intelligent
+    def karvis(self):
+        return self.interaction.karvis
 
-    def what_inform_knowledge(self, **kwargs):
-        vocabulary = self.artificial_intelligent.speak.say_vocabulary_what_inform_knowledge()
+    def what_inform_want(self, **kwargs):
+        vocabulary = self.karvis.speak.say_what_information_want()
 
         dialog_question = self.interaction.dialog.dialogs_question.create(
             author=AUTHOR_DIALOG_AI, vocabulary=vocabulary

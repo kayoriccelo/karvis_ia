@@ -2,7 +2,9 @@ from data.dialog.choices import AUTHOR_DIALOG_AI
 from data.intention.choices import (
     TYPE_INTENTION_ADDING_NEW_KNOWLEDGE, TYPE_INTENTION_NEGATION, TYPE_INTENTION_CONFIRMATION
 )
-from interaction.interactions.creations.knowledges.creations import create_knowledge_chatgpt, create_knowledge_informed
+from interaction.continuously.interactions.creations.knowledges.creations import (
+    create_knowledge_chatgpt, create_knowledge_informed
+)
 from useful.chat_gpt import try_get_information_chatgpt
 from data.vocabulary.choices import (
     TYPE_VOCABULARY_WANT_ADD_NEW_INTENT, TYPE_VOCABULARY_WANT_INFORM_KNOWLEDGE,
@@ -39,8 +41,8 @@ class CreationResponses:
         return self.interaction_creation.interaction
 
     @property
-    def artificial_intelligent(self):
-        return self.interaction.artificial_intelligent
+    def karvis(self):
+        return self.interaction.karvis
 
     def adding_new_knowledge(self, **kwargs):
         return self.interaction_creation.questions.what_intent_you_want_create()
@@ -80,9 +82,11 @@ class CreationResponses:
         return self.interaction_creation.questions.what_knowledge_want_teach(dialog_question=dialog_question)
 
     def what_knowledge_want_teach(self, **kwargs):
-        create_knowledge_informed(self.interaction.artificial_intelligent.dialog)
+        create_knowledge_informed(self.karvis.dialog)
 
-        self.artificial_intelligent.speak.say_thanks_for_the_new_knowledge()
+        self.karvis.speak.say_thanks_for_the_new_knowledge()
+
+        return True
 
     def what_you_want_search_chatgpt(self, **kwargs):
         dialog_question = kwargs.get('dialog_question', None)
@@ -92,8 +96,8 @@ class CreationResponses:
 
             knowledge_chatgpt = try_get_information_chatgpt(dialog_response.response)
 
-            self.artificial_intelligent.speak.say_i_found_the_following_information()
-            self.artificial_intelligent.speak.say(knowledge_chatgpt)
+            self.karvis.speak.say_i_found_the_following_information()
+            self.karvis.speak.say(knowledge_chatgpt)
 
             dialog_question.dialogs_response.create(author=AUTHOR_DIALOG_AI, response=knowledge_chatgpt)
 
@@ -109,7 +113,7 @@ class CreationResponses:
                 if dialog_response.intention.type == TYPE_INTENTION_CONFIRMATION:
                     create_knowledge_chatgpt(dialog_question.dialog)
 
-                    self.artificial_intelligent.speak.say_thanks_for_the_new_knowledge()
+                    self.karvis.speak.say_thanks_for_the_new_knowledge()
                     return
 
         return self.interaction_creation.questions.want_inform_knowledge()

@@ -1,5 +1,5 @@
-from interaction.interactions.core.questions import CoreQuestions
-from interaction.interactions.core.responses import CoreResponses
+from interaction.continuously.interactions.core.questions import CoreQuestions
+from interaction.continuously.interactions.core.responses import CoreResponses
 
 
 class InteractionCore:
@@ -14,5 +14,5 @@ class InteractionCore:
         self.responses = CoreResponses(self)
 
     @property
-    def artificial_intelligent(self):
-        return self.interaction.artificial_intelligent
+    def karvis(self):
+        return self.interaction.karvis

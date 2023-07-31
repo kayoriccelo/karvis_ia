@@ -1,5 +1,6 @@
 from data.dialog.choices import AUTHOR_DIALOG_AI
 from data.intention.choices import TYPE_INTENTION_NEED_INFORMATION, TYPE_INTENTION_WHAT_INFORMATION_WANT
+from data.vocabulary.choices import TYPE_VOCABULARY_WHAT_INFORMATION_WANT
 
 
 class InformationResponses:
@@ -15,16 +16,20 @@ class InformationResponses:
             TYPE_INTENTION_WHAT_INFORMATION_WANT: self.what_information_want,
         }
 
+        self.vocabularys = {
+            TYPE_VOCABULARY_WHAT_INFORMATION_WANT: self.what_information_want,
+        }
+
     @property
     def interaction(self):
         return self.interaction_information.interaction
 
     @property
-    def artificial_intelligent(self):
-        return self.interaction.artificial_intelligent
+    def karvis(self):
+        return self.interaction.karvis
 
     def need_information(self, **kwargs):
-        vocabulary = self.artificial_intelligent.speak.say_what_information_want()
+        vocabulary = self.karvis.speak.say_what_information_want()
 
         dialog_question = self.interaction.dialog.dialogs_question.create(
             author=AUTHOR_DIALOG_AI, vocabulary=vocabulary
@@ -41,7 +46,12 @@ class InformationResponses:
                 author=AUTHOR_DIALOG_AI, intention=intention
             )
 
+        if not intention.knowledge_bases.exists():
+            raise Exception('Knowledge not found.')
+
         for knowledge_base in intention.knowledge_bases.all():
-            self.artificial_intelligent.speak.say(knowledge_base.description)
+            self.karvis.speak.say(knowledge_base.description)
 
             dialog_question.dialogs_response.create(author=AUTHOR_DIALOG_AI, knowledge_base=knowledge_base)
+
+        return True

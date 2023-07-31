@@ -1,5 +1,5 @@
-from interaction.interactions.informations.questions import InformationQuestions
-from interaction.interactions.informations.responses import InformationResponses
+from interaction.continuously.interactions.informations.questions import InformationQuestions
+from interaction.continuously.interactions.informations.responses import InformationResponses
 
 
 class InteractionInformations:
@@ -14,5 +14,5 @@ class InteractionInformations:
         self.responses = InformationResponses(self)
 
     @property
-    def artificial_intelligent(self):
-        return self.interaction.artificial_intelligent
+    def karvis(self):
+        return self.interaction.karvis

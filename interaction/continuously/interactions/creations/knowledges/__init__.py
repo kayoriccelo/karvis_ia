@@ -1,5 +1,5 @@
-from interaction.interactions.creations.knowledges.questions import CreationQuestions
-from interaction.interactions.creations.knowledges.responses import CreationResponses
+from interaction.continuously.interactions.creations.knowledges.questions import CreationQuestions
+from interaction.continuously.interactions.creations.knowledges.responses import CreationResponses
 
 
 class InteractionCreationKnowledge:
@@ -14,5 +14,5 @@ class InteractionCreationKnowledge:
         self.responses = CreationResponses(self)
 
     @property
-    def artificial_intelligent(self):
-        return self.interaction.artificial_intelligent
+    def karvis(self):
+        return self.interaction.karvis
