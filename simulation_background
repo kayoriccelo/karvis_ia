@@ -1,0 +1,20 @@
+
+send / user:
+ - Oi maia.
+   - create dialog
+
+response / AI:
+ - Oi, como posso ajudar?
+   - create question
+
+send / user:
+ - preciso de informações.
+   - get question pending / response
+
+send / AI:
+ - que informação você deseja?
+   - create question
+
+response / user:
+ - informação...
+   - get question pending / response

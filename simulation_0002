@@ -1,0 +1,43 @@
+
+SOLICITAÇÃO DE UM CLIENTE PARA A MAIA
+-----------------------------------------------------------------------------------------------------------------------
+maia, preciso que você crie um novo dfd com a data 10 de julho de 2023,
+seu objecto será Aquisição de materiais eletrônicos para suprir necessidade do municipio,
+ele será um registro de preço,
+seu órgão será o 04, 
+sua unidade orçamentária será a 10, 
+sua comissão será a comissão de planejamento mais atual, 
+sua fundamentação será a lei 14133,
+-----------------------------------------------------------------------------------------------------------------------
+maia, precisa identificar a intenção principal desse testo que é criar um novo dfd/documento de formalização de demanda.
+-----------------------------------------------------------------------------------------------------------------------
+sabendo a intenção principal que é criar um novo dfd, maia vai buscar nessa solicitação as informações necessárias, 
+que são:
+
+Data:
+Objecto:
+Órgão:
+Unidade orçamentária:
+Comissão de planejamento:
+Fundamentação:
+É registro de preço:
+-----------------------------------------------------------------------------------------------------------------------
+para isso maia terá que ter uma base de intenções principais com intenções secundárias compostas de vocabularios para 
+identificar cada campo necessário exemplo:
+
+Novo DFD:
+    intenções:
+        - novo dfd
+        - crie um novo dfd
+        - adicione um novo dfd
+        - crie um novo documento de formalização de demanda
+        - novo documento de formalização de demanda
+        
+------- necessário para criar:
+
+        Data:
+            sub intenções:
+                - com a data
+                - com data
+                - sua data
+                - sua data será 
