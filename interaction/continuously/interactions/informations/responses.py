@@ -5,7 +5,7 @@ from data.vocabulary.choices import TYPE_VOCABULARY_WHAT_INFORMATION_WANT
 
 class InformationResponses:
     intentions = {}
-    vocabularys = {}
+    vocabularies = {}
     interaction_information = None
 
     def __init__(self, interaction_information):
@@ -16,7 +16,7 @@ class InformationResponses:
             TYPE_INTENTION_WHAT_INFORMATION_WANT: self.what_information_want,
         }
 
-        self.vocabularys = {
+        self.vocabularies = {
             TYPE_VOCABULARY_WHAT_INFORMATION_WANT: self.what_information_want,
         }
 

@@ -110,11 +110,11 @@ class InteractionContinuously(InteractionBase):
                     if dialog_question and dialog_question.vocabulary:
                         vocabulary = dialog_question.vocabulary
 
-                        if vocabulary.type in interaction.responses.vocabularys.keys():
-                            return interaction.responses.vocabularys[vocabulary.type]
+                        if vocabulary.type in interaction.responses.vocabularies.keys():
+                            return interaction.responses.vocabularies[vocabulary.type]
 
-                        if vocabulary.type in interaction.questions.vocabularys.keys():
-                            return interaction.questions.vocabularys[vocabulary.type]
+                        if vocabulary.type in interaction.questions.vocabularies.keys():
+                            return interaction.questions.vocabularies[vocabulary.type]
 
                 for interaction in self.interactions:
                     interaction = _get_interaction()

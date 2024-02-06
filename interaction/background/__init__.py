@@ -56,11 +56,11 @@ class InteractionBackground(InteractionBase):
                     if self.dialog_question_pending and self.dialog_question_pending.vocabulary:
                         vocabulary = self.dialog_question_pending.vocabulary
 
-                        if vocabulary.type in interaction.responses.vocabularys.keys():
-                            return interaction.responses.vocabularys[vocabulary.type]
+                        if vocabulary.type in interaction.responses.vocabularies.keys():
+                            return interaction.responses.vocabularies[vocabulary.type]
 
-                        elif vocabulary.type in interaction.questions.vocabularys.keys():
-                            return interaction.questions.vocabularys[vocabulary.type]
+                        elif vocabulary.type in interaction.questions.vocabularies.keys():
+                            return interaction.questions.vocabularies[vocabulary.type]
 
                 for interaction in self.interactions:
                     interaction = _get_interaction()

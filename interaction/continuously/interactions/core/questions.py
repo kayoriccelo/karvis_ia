@@ -5,7 +5,7 @@ from data.vocabulary.methods import try_get_vocabulary
 
 class CoreQuestions:
     intentions = {}
-    vocabularys = {}
+    vocabularies = {}
     interaction_core = None
 
     def __init__(self, interaction_core):

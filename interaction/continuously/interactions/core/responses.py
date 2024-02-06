@@ -3,7 +3,7 @@ from data.intention.choices import TYPE_INTENTION_NEGATION, TYPE_INTENTION_CONFI
 
 class CoreResponses:
     intentions = {}
-    vocabularys = {}
+    vocabularies = {}
     interaction_core = None
 
     def __init__(self, interaction_core):

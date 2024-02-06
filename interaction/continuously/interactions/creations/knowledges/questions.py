@@ -9,13 +9,13 @@ from data.vocabulary.choices import (
 
 class CreationQuestions:
     intentions = {}
-    vocabularys = {}
+    vocabularies = {}
     interaction_creation = None
 
     def __init__(self, interaction_creation):
         self.interaction_creation = interaction_creation
 
-        self.vocabularys = {
+        self.vocabularies = {
             TYPE_VOCABULARY_WHAT_INTENT_YOU_WANT_CREATE: self.what_intent_you_want_create,
             TYPE_VOCABULARY_WANT_ADD_NEW_INTENT: self.want_add_new_intent,
             TYPE_VOCABULARY_HOW_MANY_MINUTES_INFORM_KNOWLEDGE: self.how_many_minutes_inform_knowledge,

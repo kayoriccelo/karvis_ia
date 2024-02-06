@@ -16,7 +16,7 @@ from data.vocabulary.choices import (
 
 class CreationResponses:
     intentions = {}
-    vocabularys = {}
+    vocabularies = {}
     interaction_creation = None
 
     def __init__(self, interaction_creation):
@@ -26,7 +26,7 @@ class CreationResponses:
             TYPE_INTENTION_ADDING_NEW_KNOWLEDGE: self.adding_new_knowledge,
         }
 
-        self.vocabularys = {
+        self.vocabularies = {
             TYPE_VOCABULARY_WHAT_INTENT_YOU_WANT_CREATE: self.what_intent_you_want_create,
             TYPE_VOCABULARY_WANT_ADD_NEW_INTENT: self.want_add_new_intent,
             TYPE_VOCABULARY_WANT_INFORM_KNOWLEDGE: self.want_inform_knowledge,
